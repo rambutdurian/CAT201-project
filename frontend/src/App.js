@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import Footer from './Footer';
+import AttractionPage from './AttractionPage';
 
 function App() {
     const [data, setData] = useState(null);
@@ -9,7 +10,15 @@ function App() {
     useEffect(() => {
         fetch('http://localhost:8080') // Backend endpoint
             .then((response) => response.json())
-            .then((data) => setData(data))
+            .then((data) =>
+                setData({
+                    ...data,
+                    attractions: data.attractions.map((attraction) => ({
+                        ...attraction,
+                        image: `${process.env.PUBLIC_URL}/${attraction.image}`, // Ensure proper image path
+                    })),
+                })
+            )
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
 
@@ -24,14 +33,7 @@ function App() {
                             <p>{data.description}</p>
                             <p>Operating Hours: {data.hours}</p>
                         </section>
-                        <section id="attractions">
-                            <h2>Attractions</h2>
-                            <ul>
-                                {data.attractions.map((attraction, index) => (
-                                    <li key={index}>{attraction}</li>
-                                ))}
-                            </ul>
-                        </section>
+                        <AttractionPage attractions={data.attractions} />
                         <section id="tickets">
                             <h2>Ticket Prices</h2>
                             <ul>

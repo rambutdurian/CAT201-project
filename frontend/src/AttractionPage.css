@@ -1,0 +1,79 @@
+/* General Page Styling */
+.attraction-page {
+    padding: 30px;
+    background-color: #10141e; /* Dark background for contrast */
+    min-height: 50vh;
+}
+
+.attraction-page-title {
+    text-align: center;
+    color: #ffcc00; /* Bright yellow for visibility */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout for Attractions */
+.attraction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Two cards per row on large screens, 1 on smaller screens */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Card Styling */
+.attraction-card {
+    background-color: #1a1f2a; /* Slightly lighter dark background */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 90%; /* Flexible width for responsiveness */
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.attraction-card:hover {
+    transform: scale(1.03); /* Subtle zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Styling */
+.attraction-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Prevent stretching */
+}
+
+/* Card Content */
+.attraction-info {
+    padding: 20px;
+    text-align: center; /* Center align text */
+    color: #e0e0e0;
+}
+
+.attraction-name {
+    font-size: 1.8rem;
+    color: #00ffff; /* Neon blue for emphasis */
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.attraction-description {
+    margin: 10px 0 20px;
+    font-size: 1rem;
+    color: #c9c9c9; /* Lighter gray for readability */
+    line-height: 1.5;
+}
+
+/* Details List */
+.attraction-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #ffcc00; /* Bright yellow for details */
+}
+
+.attraction-details li {
+    margin: 8px 0;
+}
