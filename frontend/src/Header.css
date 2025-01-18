@@ -12,11 +12,13 @@
 
 .Header-nav {
     margin-top: 10px;
+    display: flex;             /* Makes the navigation links inline */
+    justify-content: center;  /* Centers the navigation links */
 }
 
 .Header-nav a {
     color: #00ffff;           /* Neon blue for links */
-    margin: 0 10px;
+    margin: 0 10px;            /* Space between the links */
     text-decoration: none;
     font-weight: bold;
 }
