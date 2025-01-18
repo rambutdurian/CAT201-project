@@ -1,15 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
-function Header() {
+function Header({ promotions }) {  // Receive promotions prop
+    if (!promotions) {
+        return null;  // Guard against undefined or empty promotions
+    }
+
     return (
         <header className="Header">
-            <h1 className="Header-title">Eclipse Kingdom</h1>
-            <nav className="Header-nav">
-                <a href="#home">Home</a>
-                <a href="#attractions">Attractions</a>
-                <a href="#tickets">Tickets</a>
-            </nav>
+            <h1 className="Header-title">Theme Park</h1>
+            <div className="Header-nav">
+                <Link to="/">Home</Link>
+                <Link to="/promotions">Promotions</Link>
+                <Link to="/book">Book Tickets</Link>
+            </div>
         </header>
     );
 }

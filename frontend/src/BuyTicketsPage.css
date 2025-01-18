@@ -1,0 +1,79 @@
+.buy-tickets-page {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: #000; /* Ensure all text within .buy-tickets-page is black */
+}
+
+.buy-tickets-page h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #000; /* Ensure h1 text is black */
+}
+
+.buy-tickets-page p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #000; /* Ensure p text is black */
+}
+
+.ticket-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #000; /* Ensure label text is black */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #000; /* Ensure input and select text is black */
+}
+
+.submit-btn {
+    background-color: #1e3a8a;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #ffcc00;
+}
+
+.promo-message {
+    font-size: 16px; /* Same font size as total price */
+    color: #000; /* Default black for messages */
+    margin-top: 5px; /* Adjust this value to reduce the gap */
+    margin-bottom: 5px; /* Optional: control the gap below the message */
+}
+
+.promo-message.success {
+    color: #5bc0de; /* Blue for success messages */
+}

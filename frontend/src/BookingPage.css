@@ -1,0 +1,68 @@
+.booking-page {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;  /* Adjust margin for better spacing */
+}
+
+/* Style for the full-width image */
+.booking-banner {
+    width: 100%;
+    height: auto;
+    border-radius: 0; /* No rounded corners for the image */
+}
+
+/* Style for the ticket categories */
+.ticket-category {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.ticket-box {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 20px;
+    width: 220px; /* Adjusted width for cleaner display */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to left inside the boxes */
+}
+
+.ticket-box h3 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center; /* Center align titles */
+}
+
+.ticket-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ticket-price {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.ticket-box button {
+    background-color: #1a1a40;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Makes button span the entire width of the box */
+    font-weight: bold;
+}
+
+.ticket-box button:hover {
+    background-color: #00ffff;
+}
