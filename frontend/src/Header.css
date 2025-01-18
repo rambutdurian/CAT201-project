@@ -1,0 +1,26 @@
+.Header {
+    background-color: #1a1a40; /* Space theme dark background */
+    color: #ffffff;           /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+.Header-title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.Header-nav {
+    margin-top: 10px;
+}
+
+.Header-nav a {
+    color: #00ffff;           /* Neon blue for links */
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.Header-nav a:hover {
+    color: #ff00ff;           /* Neon pink hover effect */
+}
