@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
   color: white;
@@ -12,17 +13,82 @@ body {
 }
 
 h2 {
-  color: #00ffff; /* Neon blue */
+  color: #00ffff; /* Neon blue for section titles */
 }
 
+/* List styles */
 ul {
   list-style: none;
   padding: 0;
 }
 
 ul li {
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent list items */
+  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
+}
+
+/* Attraction Page Styles */
+.attraction-page {
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.attraction-page h2 {
+  color: #ffcc00; /* Bright yellow for section title */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.attraction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Attraction Card Styles */
+.attraction-item {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent card */
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.attraction-item:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Hover shadow effect */
+}
+
+.attraction-item img {
+  width: 120px; /* Adjust image size */
+  height: 120px;
+  border-radius: 10px;
+  margin-right: 20px;
+  object-fit: cover; /* Scale image properly */
+  background-color: rgba(0, 0, 0, 0.3); /* Optional fallback background */
+}
+
+.attraction-item h3 {
+  margin: 0 0 5px;
+  color: #00ffff; /* Neon blue for attraction name */
+}
+
+.attraction-item p {
+  margin: 0;
+  color: #ddd; /* Light gray for description */
+  font-size: 14px;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: #203a43;
+  color: white;
 }
