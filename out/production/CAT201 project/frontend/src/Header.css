@@ -1,0 +1,122 @@
+.Header {
+    background-color: #1a1a40;
+    color: #ffffff;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 100;  /* Ensure it's always above other content */
+    height: 120px;  /* Adjust based on your header height */
+    box-sizing: border-box;  /* Ensure padding doesn't affect the width */
+}
+
+.Header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.Header-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and title */
+}
+
+.Header-logo {
+    width: 100px;  /* Adjust the size of the logo */
+    height: auto;  /* Keep the aspect ratio of the logo */
+}
+
+.Header-title h1 {
+    font-size:2.7rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.Header-nav {
+    display: flex;
+    gap: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Header-nav a {
+    color: #00ffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.Header-nav a:hover {
+    color: #ff00ff;
+}
+
+/* Hamburger menu button */
+.Hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Hamburger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #00ffff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Make sure to avoid the scroll bar overlap */
+    .Header {
+        width: 100%;
+    }
+
+    .Header-nav {
+        position: absolute;
+        top: 100px; /* Position below the header */
+        left: 0;
+        background-color: #1a1a40;
+        flex-direction: column;
+        width: 100%; /* Full width */
+        transform: translateX(100%); /* Initially hide the menu */
+        visibility: hidden;
+        justify-content: center; /* Center items vertically */
+        text-align: center; /* Center text horizontally */
+        padding-top: 10px; /* Add space to the top */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .Header-nav.open {
+        transform: translateX(0); /* Slide from right to left */
+        visibility: visible;
+    }
+
+    .Hamburger {
+        display: flex; /* Show hamburger button on smaller screens */
+    }
+
+    .Header-nav a {
+        padding: 10px 0; /* Add padding to menu links */
+        font-size: 1.2rem;  /* Adjust font size */
+    }
+
+    /* Prevent horizontal scroll */
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Avoid body content being overlapped */
+    .App.open {
+        margin-top: 250px;  /* Push down content by the height of the header */
+    }
+}
