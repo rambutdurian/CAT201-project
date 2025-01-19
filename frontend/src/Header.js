@@ -13,11 +13,13 @@ function Header() {
         <header className="Header">
             <div className="Header-container">
                 <div className="Header-title">
-                    <img
-                        src={`${process.env.PUBLIC_URL}/images/logo.png`} // Path to the logo image
-                        alt="Eclipse Kingdom Logo"
-                        className="Header-logo"
-                    />
+                    <Link to="/" onClick={() => setMenuOpen(false)}>
+                        <img
+                            src={`${process.env.PUBLIC_URL}/images/logo.png`} // Path to the logo image
+                            alt="Eclipse Kingdom Logo"
+                            className="Header-logo"
+                        />
+                    </Link>
                     <h1>Eclipse Kingdom</h1>
                 </div>
                 <button className="Hamburger" onClick={toggleMenu}>

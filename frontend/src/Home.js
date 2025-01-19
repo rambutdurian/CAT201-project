@@ -104,8 +104,13 @@ function Home({ name, description, contact }) {
                     </ul>
                 </div>
                 <div className="other-details">
-                    <h3>About Us</h3>
-                    <p>We are dedicated to providing an unforgettable experience. Visit us today and make lasting memories.</p>
+                    <h3>About Us <span role="img" aria-label="rocket" className="space-icon">🚀</span></h3>
+                    <p>
+                        We’re here to provide you with an out-of-this-world experience!  <span role="img" aria-label="star" className="space-icon">✨</span>
+                    </p>
+                    <p>
+                        Join us on a journey that’s truly stellar! 🌟 <span role="img" aria-label="planet" className="space-icon">🪐</span>
+                    </p>
                 </div>
             </div>
         </div>
