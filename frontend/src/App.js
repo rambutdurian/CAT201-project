@@ -8,23 +8,22 @@ import PromotionPage from './PromotionPage';
 import BookingPage from './BookingPage';
 import AttractionPage from './AttractionPage';
 import BuyTicketsPage from './BuyTicketsPage';
+import AdminDashboard from './AdminDashboard'; // Admin Dashboard
 
 function App() {
     const [data, setData] = useState(null); // State for data
     const [isLoading, setIsLoading] = useState(true); // State for loading status
 
-    // Fetch data from the backend on initial load
+    // Fetch data from the backend or mock data on initial load
     useEffect(() => {
-        fetch('http://localhost:8080') // Replace with your backend API URL
-            .then((response) => response.json())
-            .then((data) => {
-                setData(data);
-                setIsLoading(false); // Data has been fetched
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-                setIsLoading(false); // Stop loading if there's an error
-            });
+        // Simulate fetching data (can be replaced with actual API if needed)
+        const mockData = {
+            name: 'Eclipse Kingdom',
+            description: 'An exciting theme park with tons of attractions!',
+            contact: 'contact@eclipsekingdom.com'
+        };
+        setData(mockData);
+        setIsLoading(false);
     }, []);
 
     // Display loading message while fetching data
@@ -40,26 +39,18 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <Header promotions={[]} />
+                <Header />
                 <main className="MainContent">
                     <Routes>
-                        {/* Default route for Home */}
                         <Route
                             path="/"
-                            element={
-                                <Home
-                                    name={data?.name}
-                                    description={data?.description}
-                                    contact={data?.contact}
-                                />
-                            }
+                            element={<Home name={data.name} description={data.description} contact={data.contact} />}
                         />
-                        {/* Other routes */}
-                        <Route path="/promotions" element={<PromotionPage promotions={[]} />} />
+                        <Route path="/promotions" element={<PromotionPage />} />
                         <Route path="/book" element={<BookingPage />} />
-                        <Route path="/attraction" element={<AttractionPage attractions={[]} />} />
+                        <Route path="/attraction" element={<AttractionPage />} />
                         <Route path="/buy-tickets" element={<BuyTicketsPage />} />
-                        {/* Redirect unknown routes to Home */}
+                        <Route path="/admin" element={<AdminDashboard />} /> {/* Admin Dashboard */}
                         <Route path="*" element={<Navigate to="/" />} />
                     </Routes>
                 </main>

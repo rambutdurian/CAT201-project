@@ -1,0 +1,133 @@
+/* General Styles */
+.admin-dashboard {
+    text-align: center;
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: lightgray; /* Light blue background for the overall dashboard */
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    transition: all 0.3s ease-in-out;
+}
+
+.admin-dashboard:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+.login-form {
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #1a1a40; /* Clean white background */
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+.login-form:hover {
+    transform: translateY(-10px);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Light grey border */
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    color: #333; /* Dark text color */
+    background-color: #f9f9f9; /* Light grey input background */
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+    color: #333;
+    background-color: #fff; /* White background on focus */
+}
+
+.login-form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Slight button zoom effect */
+}
+
+.customer-list {
+    margin-top: 40px;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd; /* Soft border color */
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333; /* Dark text color */
+}
+
+table th {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey rows */
+}
+
+table tr:hover {
+    background-color: #e0f7e3; /* Soft light green hover */
+}
+
+.logout-btn {
+    padding: 14px 24px;
+    background-color: #FF4C4C; /* Red background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #e63946; /* Darker red on hover */
+    transform: scale(1.05); /* Slight button zoom effect */
+}
+
+/* Ensuring visibility for text under logout button */
+.admin-dashboard .logout-btn + .logout-text {
+    font-size: 1rem;
+    color: #333; /* Dark text color for contrast */
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #fff; /* White background for clarity */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    width: 100%; /* Ensure it spans the width of the parent container */
+    text-align: center; /* Center-align text */
+}

@@ -1,68 +1,132 @@
-.booking-page {
-    padding: 20px;
-    text-align: center;
-}
-
-h2 {
-    color: #333;
-    margin-top: 20px;  /* Adjust margin for better spacing */
-}
-
-/* Style for the full-width image */
-.booking-banner {
+/* Prevent horizontal scrolling */
+html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: auto;
-    border-radius: 0; /* No rounded corners for the image */
+    overflow-x: hidden;
 }
 
-/* Style for the ticket categories */
+/* Container for the entire page */
+.booking-page {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    padding: 0 20px;
+}
+
+/* Center the text "Buy Tickets" */
+.booking-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #fff; /* Set text color to white */
+}
+
+/* Big Image Section */
+.booking-big-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* Image with center alignment and curve */
+.booking-big-image .big-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Ticket categories container (center the boxes) */
 .ticket-category {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center boxes horizontally */
+    gap: 50px; /* Larger space between boxes */
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
     margin-top: 20px;
+    padding: 0;
 }
 
+/* Design for each ticket box */
 .ticket-box {
-    background-color: #f2f2f2;
-    border-radius: 8px;
-    padding: 20px;
-    width: 220px; /* Adjusted width for cleaner display */
+    background-color: #f9f9f9;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left; /* Align text to left inside the boxes */
+    width: 300px; /* Fixed width for uniformity */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content inside the box */
+    justify-content: space-between;
 }
 
+.ticket-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title for each ticket box */
 .ticket-box h3 {
-    color: #333;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-    text-align: center; /* Center align titles */
+    color: #333;
 }
 
+/* Description and Price styling */
 .ticket-description {
     font-size: 14px;
-    color: #666;
+    color: #333;
     margin-bottom: 10px;
-    text-align: center;
 }
 
 .ticket-price {
+    font-size: 16px;
+    color: #1a1a40;
+    margin-bottom: 20px;
+}
+
+.ticket-price strong {
     font-size: 18px;
     color: #333;
-    font-weight: bold;
-    margin-bottom: 12px;
-    text-align: center;
 }
 
-.ticket-box button {
+/* Buy Now button styling */
+.buy-now-button {
+    padding: 15px;
     background-color: #1a1a40;
-    color: white;
-    padding: 10px;
-    border: none;
+    color: #fff;
     border-radius: 5px;
-    cursor: pointer;
-    width: 100%; /* Makes button span the entire width of the box */
     font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 80%; /* Makes button smaller and centered */
+    transition: background-color 0.3s ease;
 }
 
-.ticket-box button:hover {
-    background-color: #00ffff;
+.buy-now-button:hover {
+    background-color: #333;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 768px) {
+    .ticket-category {
+        flex-direction: column; /* Stack ticket boxes vertically */
+        align-items: center; /* Center boxes in the column */
+    }
+
+    .ticket-box {
+        width: 80%; /* Reduce box width for smaller screens */
+        margin-bottom: 20px;
+    }
 }

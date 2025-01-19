@@ -1,79 +1,112 @@
+/* General Page Styling */
 .buy-tickets-page {
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
     text-align: center;
-    color: #000; /* Ensure all text within .buy-tickets-page is black */
+    color: white;
 }
 
-.buy-tickets-page h1 {
-    font-size: 2rem;
+p {
+    text-align: center;
+    color: #white;
     margin-bottom: 20px;
-    color: #000; /* Ensure h1 text is black */
 }
 
-.buy-tickets-page p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #000; /* Ensure p text is black */
-}
-
+/* Form Styling */
 .ticket-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-    width: 100%;
-    max-width: 400px;
     margin-bottom: 15px;
-    text-align: left;
 }
 
 .form-group label {
     display: block;
-    font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 5px;
-    color: #000; /* Ensure label text is black */
+    color: #333;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
     padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
     border: 1px solid #ccc;
-    color: #000; /* Ensure input and select text is black */
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
 }
 
-.submit-btn {
-    background-color: #1e3a8a;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px 20px;
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.3);
+}
+
+/* Promo Message Styling */
+.promo-message {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #4caf50; /* Green color for valid promo */
+}
+
+/* Total Price */
+.form-group strong {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Shared Styles for Buttons */
+.standard-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    width: 48%; /* Keeps buttons evenly sized */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.cancel-btn:hover {
+    background-color: #d32f2f; /* Darker red */
+    transform: scale(1.03); /* Slight zoom effect */
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #4caf50; /* Green */
+    color: white;
 }
 
 .submit-btn:hover {
-    background-color: #ffcc00;
+    background-color: #388e3c; /* Darker green */
+    transform: scale(1.03); /* Slight zoom effect */
 }
 
-.promo-message {
-    font-size: 16px; /* Same font size as total price */
-    color: #000; /* Default black for messages */
-    margin-top: 5px; /* Adjust this value to reduce the gap */
-    margin-bottom: 5px; /* Optional: control the gap below the message */
-}
-
-.promo-message.success {
-    color: #5bc0de; /* Blue for success messages */
+/* Button Group */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
 }

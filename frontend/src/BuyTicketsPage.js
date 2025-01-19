@@ -13,6 +13,7 @@ function BuyTicketsPage() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [date, setDate] = useState('');
 
     // State for the promo code and discount
     const [promoCode, setPromoCode] = useState('');
@@ -32,7 +33,7 @@ function BuyTicketsPage() {
     const promoCodes = {
         NEWYEAR15: 15,
         MERRY20: 20,
-        WALKIN10: 10,
+        HAPPY15: 15,
         SCHOOLHOLIDAY15: 15,
         EARLYBIRD10: 10,
         CNY25: 25
@@ -46,21 +47,41 @@ function BuyTicketsPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Create customer data object
+        const newCustomer = {
+            id: Date.now(),  // Using timestamp as a unique ID
+            name,
+            email,
+            paymentAmount: totalAmount
+        };
+
+        // Retrieve existing customers from localStorage or create an empty array
+        let customers = JSON.parse(localStorage.getItem('customers')) || [];
+
+        // Add the new customer to the list
+        customers.push(newCustomer);
+
+        // Save updated customers to localStorage
+        localStorage.setItem('customers', JSON.stringify(customers));
+
         // Navigate to the Payment Page and pass the total amount
         navigate('/payment', { state: { totalAmount } });
     };
 
-    // Handle key down event for Enter key
+    const handleCancel = () => {
+        navigate(-1); // Navigate to the previous page
+    };
+
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            // Validate the promo code after Enter is pressed
             if (promoCode !== '') {
                 if (promoCodes[promoCode]) {
                     setDiscount(promoCodes[promoCode]);
                     setPromoMessage(`You got a ${promoCodes[promoCode]}% discount!`);
                 } else {
                     setPromoMessage('Invalid promo code!');
-                    setDiscount(0);  // Reset discount if code is invalid
+                    setDiscount(0);
                 }
             }
         }
@@ -80,9 +101,9 @@ function BuyTicketsPage() {
                         value={ticketType}
                         onChange={(e) => setTicketType(e.target.value)}
                     >
-                        <option value="single">Single Entry - $50</option>
-                        <option value="combo">Combo Ticket - $80</option>
-                        <option value="family">Family Pass - $120</option>
+                        <option value="single">Single Ticket - RM50</option>
+                        <option value="combo">Combo Ticket - RM80</option>
+                        <option value="family">Family Ticket - RM120</option>
                     </select>
                 </div>
 
@@ -132,7 +153,17 @@ function BuyTicketsPage() {
                     />
                 </div>
 
-                {/* Promo Code Input */}
+                <div className="form-group">
+                    <label htmlFor="date">Select Date:</label>
+                    <input
+                        type="date"
+                        id="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        required
+                    />
+                </div>
+
                 <div className="form-group">
                     <label htmlFor="promoCode">Promo Code:</label>
                     <input
@@ -140,9 +171,8 @@ function BuyTicketsPage() {
                         id="promoCode"
                         value={promoCode}
                         onChange={(e) => setPromoCode(e.target.value)}
-                        onKeyDown={handleKeyDown} // Trigger validation when Enter is pressed
+                        onKeyDown={handleKeyDown}
                     />
-                    {/* Promo code message under input */}
                     {promoMessage && (
                         <div className="promo-message">
                             <p>{promoMessage}</p>
@@ -152,10 +182,18 @@ function BuyTicketsPage() {
 
                 <div className="form-group">
                     <label>Total Price: </label>
-                    <strong>${totalAmount.toFixed(2)}</strong>
+                    <strong>RM {totalAmount.toFixed(2)}</strong>
                 </div>
 
-                <button type="submit" className="submit-btn">Make Payment</button>
+                <div className="button-group">
+                    <button type="button" className="standard-btn cancel-btn" onClick={handleCancel}>
+                        Cancel
+                    </button>
+                    <button type="submit" className="standard-btn submit-btn">
+                        Make Payment
+                    </button>
+                </div>
+
             </form>
         </div>
     );

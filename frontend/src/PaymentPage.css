@@ -1,4 +1,21 @@
-/* PaymentPage.css */
+/* Alert message styles at the top */
+.alert-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Payment Page styles */
 .payment-page {
     max-width: 600px;
     margin: 50px auto;
@@ -8,12 +25,21 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Heading */
 .payment-page h2 {
     text-align: center;
     font-size: 2rem;
     color: #333;
 }
 
+/* Description Text */
+.payment-page p {
+    color: #000;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Form styling */
 .payment-page form {
     display: flex;
     flex-direction: column;
@@ -32,6 +58,23 @@
     border-radius: 5px;
 }
 
+/* Error Message */
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Total Amount Text */
+.payment-page .total-amount {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
 .payment-page button {
     padding: 10px;
     background-color: #1a1a40;
@@ -44,4 +87,19 @@
 
 .payment-page button:hover {
     background-color: #333;
+}
+
+.payment-page .button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Cancel Button */
+.cancel-button {
+    background-color: #f44336;
+}
+
+/* Submit Button */
+.submit-button {
+    background-color: #4caf50;
 }

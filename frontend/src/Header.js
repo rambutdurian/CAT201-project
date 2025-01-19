@@ -33,6 +33,8 @@ function Header() {
                     <Link to="/attraction" onClick={() => setMenuOpen(false)}>Attractions</Link>
                     <Link to="/promotions" onClick={() => setMenuOpen(false)}>Promotions</Link>
                     <Link to="/book" onClick={() => setMenuOpen(false)}>Book Tickets</Link>
+                    {/* Add the Admin Dashboard link */}
+                    <Link to="/admin" onClick={() => setMenuOpen(false)}>Admin Dashboard</Link>
                 </nav>
             </div>
         </header>
