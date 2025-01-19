@@ -1,16 +1,14 @@
 {
   "name": "Eclipse Kingdom",
-  "description": "The ultimate destination for fun and adventure!",
-  "hours": "9:00 AM - 10:00 PM",
-  "attractions": [
-    "Roller Coaster Mania",
-    "Splash Mountain",
-    "Haunted Mansion",
-    "Space Adventure"
-  ],
-  "tickets": {
-    "adult": "$50",
-    "child": "$30",
-    "senior": "$40"
+  "description": "Welcome to Eclipse Kingdom, your ultimate destination for fun, adventure, and unforgettable memories. Immerse yourself in our world-class attractions and enjoy an experience like no other.",
+  "contact": {
+    "phone": "+60-123456789",
+    "socials": {
+      "email": "eclipsekingdom@gmail.com",
+      "facebook": "https://facebook.com/eclipsekingdom",
+      "twitter": "https://twitter.com/eclipsekingdom",
+      "instagram": "https://instagram.com/eclipsekingdom"
+    },
+    "address": "1234 Fantasy Lane, Switzerland"
   }
 }

@@ -3,7 +3,19 @@
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
+    position: relative; /* Default position */
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Ensures it spans the full width */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures body height covers the viewport */
+    margin: 0;
+}
+
+.App {
+    flex: 1; /* Ensures content stretches to fill space above footer */
+    box-sizing: border-box;
 }

@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import Home from './Home';  // Import the Home component
 import PromotionPage from './PromotionPage';
 import BookingPage from './BookingPage';
 import AttractionPage from './AttractionPage';
@@ -11,69 +12,38 @@ import BuyTicketsPage from './BuyTicketsPage';
 function App() {
     const [data, setData] = useState(null);
 
-    const promotions = [
-        {
-            title: 'Walk-in Promotion',
-            description: 'Come in and shop with us for exclusive walk-in deals! No need to order online.',
-            promoCode: 'WALKIN10',
-            imageUrl: '/images/image1.jpg',
-        },
-        {
-            title: 'Christmas Promotion',
-            description: 'Celebrate the festive season with our special Christmas deals!',
-            promoCode: 'MERRY20',
-            imageUrl: '/images/image2.jpg',
-        },
-        {
-            title: 'New Year Promotion',
-            description: 'Ring in the new year with our New Year promotion!',
-            promoCode: 'NEWYEAR15',
-            imageUrl: '/images/image3.jpg',
-        },
-    ];
-
     useEffect(() => {
-        fetch('http://localhost:8080')
+        fetch('http://localhost:8080') // Fetching data from the backend
             .then((response) => response.json())
-            .then((data) =>
-                setData({
-                    ...data,
-                    attraction: data.attraction.map((attraction) => ({
-                        ...attraction,
-                        image: `${process.env.PUBLIC_URL}/${attraction.image}`,
-                    })),
-                })
-            )
+            .then((data) => setData(data))
             .catch((error) => console.error('Error fetching data:', error));
     }, []);
 
     return (
-        <Router>
-            <div className="App">
-                <Header promotions={promotions} />
-                <main>
-                    {/* Home Page (Welcome message) */}
-                    <section id="home" className="home-section">
-                        <h2>Welcome to Our Theme Park!</h2>
-                        <p>Explore exciting attractions, promotions, and book your tickets today!</p>
-                    </section>
-
+        <div className="App">
+            <Router>
+                <Header promotions={[]} />
+                <main className="MainContent">
                     <Routes>
                         <Route
-                            path="/promotions"
-                            element={<PromotionPage promotions={promotions} />}
+                            path="/"
+                            element={
+                                <Home
+                                    name={data?.name}
+                                    description={data?.description}
+                                    contact={data?.contact}
+                                />
+                            }
                         />
+                        <Route path="/promotions" element={<PromotionPage promotions={[]} />} />
                         <Route path="/book" element={<BookingPage />} />
-                        <Route
-                            path="/attraction"
-                            element={<AttractionPage attractions={data?.attraction} />}
-                        />
+                        <Route path="/attraction" element={<AttractionPage attractions={[]} />} />
                         <Route path="/buy-tickets" element={<BuyTicketsPage />} />
                     </Routes>
                 </main>
-                <Footer />
-            </div>
-        </Router>
+            </Router>
+            <Footer />
+        </div>
     );
 }
 
