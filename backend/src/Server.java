@@ -18,7 +18,7 @@ public class Server {
             System.out.println("Server is running on port " + port);
             while (true) {
                 Socket socket = serverSocket.accept();
-                handleRequest(socket); // Handle each request
+                handleRequest(socket);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -26,7 +26,7 @@ public class Server {
     }
 
     private void handleRequest(Socket socket) {
-        new Thread(() -> {  // Handle request in a new thread
+        new Thread(() -> {
             try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                  PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
@@ -39,24 +39,23 @@ public class Server {
                     return;
                 }
 
-                String path = line.split(" ")[1]; // Extract the requested path
-                System.out.println("Request path: " + path);  // Added request path logging
+                String path = line.split(" ")[1];
+                System.out.println("Request path: " + path);
                 String response = switch (path) {
                     case "/api/attraction" -> DataHandler.getData("attraction.json");
                     case "/api/data" -> DataHandler.getData("data.json");
                     default -> "{\"error\": \"Endpoint not found\"}";
                 };
 
-                // Send response headers
                 out.println("HTTP/1.1 200 OK");
                 out.println("Content-Type: application/json");
                 out.println("Access-Control-Allow-Origin: *");
                 out.println("Connection: close");
                 out.println();
-                out.println(response); // Send JSON response
+                out.println(response);
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }).start();  // Start the thread for each request
+        }).start();
     }
 }
