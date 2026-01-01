@@ -1,0 +1,18 @@
+title: CAT201 Project
+description: My CAT201 project site
+baseurl: ""  # leave empty if deploying to root
+url: "https://rambutdurian.github.io/CAT201-project"  # replace with your GitHub Pages URL
+
+# Exclude folders that break Jekyll
+exclude:
+  - node_modules
+  - backend
+  - frontend/node_modules
+  - package-lock.json
+  - yarn.lock
+  - README.md
+  - .idea
+  - .DS_Store
+
+# Optional: markdown settings
+markdown: kramdown
