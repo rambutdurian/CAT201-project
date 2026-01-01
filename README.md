@@ -6,7 +6,7 @@ This is a **full-stack project** built with **React** (frontend) and **Java** (b
 ### ✨ What it does
 - Explore rides, attractions, and interstellar adventures.  
 - Fetches live data from the Java backend to keep the park information up-to-date.  
-- Fun, interactive, and immersive UI with a cosmic vibe.  
+- Fun, interactive and immersive UI with a cosmic vibe.  
 
 ### 🛠 Tech Stack
 - **Frontend:** React, JavaScript, HTML, CSS  
